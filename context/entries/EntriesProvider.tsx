@@ -9,24 +9,6 @@ export interface EntriesState {
 
 const Entries_InitialState: EntriesState = {
     entries: [
-        {
-            _id: uuidv4(),
-            description: 'Pendiente: lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum!',
-            createdAt: Date.now(),
-            status: 'pending'
-        },
-        {
-            _id: uuidv4(),
-            description: 'In-Progress: lorem ipsum dolor sit amet consectetur dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum! adipisicing elit. Quisquam, voluptatum!',
-            createdAt: Date.now() - 10000000,
-            status: 'in-progress'
-        },
-        {
-            _id: uuidv4(),
-            description: 'Terminadas: lorem ipsum consectetur adipisicing elit. Quisquam, voluptatum! dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum!',
-            createdAt: Date.now() - 100000,
-            status: 'finished'
-        },
     ],
 }
 

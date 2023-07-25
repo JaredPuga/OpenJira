@@ -1,0 +1,23 @@
+import { NextApiRequest, NextApiResponse } from 'next';
+import { db } from '@/database';
+import { Entry } from '@/models';
+import { seedData } from '@/database';
+
+export default async function handler(req:NextApiRequest, res:NextApiResponse) {
+
+    if ( process.env.NODE_ENV === 'production' ) {
+        res.status(401).json({ message: 'No tiene acceso a este servicio' })
+    }
+
+    await db.connect();
+
+    await Entry.deleteMany();
+    await Entry.insertMany(seedData.entries)
+
+
+    await db.disconnect();
+
+
+    res.status(200).json({ message: 'Se ha ejecutado el seed' })
+
+}
